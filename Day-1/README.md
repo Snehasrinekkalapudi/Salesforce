@@ -1,12 +1,12 @@
-# Salesforce Learning – Day 1 (Group Activity)
+# Salesforce Learning – Day 1
 
-## Team Activity
-Today, our team worked together on Salesforce fundamentals by designing an E-commerce application and implementing core platform concepts using custom objects, SOQL, and Apex.
+## Overview
+Today, I focused on learning Salesforce development concepts by building an E-commerce data model, practising SOQL queries, understanding Apex programming basics, and implementing Apex Triggers using best practices.
 
 ## Tasks Completed
 
 ### 1. Data Model Design
-Designed and implemented an E-commerce data model with the following objects:
+Designed and created an E-commerce data model with the following objects:
 - Account (Standard)
 - Contact (Standard)
 - Category
@@ -16,61 +16,62 @@ Designed and implemented an E-commerce data model with the following objects:
 - Payment
 - Shipment
 
-Implemented Lookup and Master-Detail relationships between objects.
+Established relationships between objects using Lookup and Master-Detail relationships.
 
 ### 2. SOQL Practice
-Executed and tested different types of SOQL queries, including:
-- WHERE clause
+Practised writing and executing SOQL queries, including:
+- WHERE Clause
 - ORDER BY with LIMIT
-- Relationship Query
-- Aggregate Query (COUNT)
-- Comparison Operator (>=)
+- Relationship Queries
+- Aggregate Queries (COUNT)
+- Comparison Operators (>=)
 
-Verified the queries and analysed the results.
+Verified query execution and analysed the returned results.
 
 ### 3. Apex Basics
-Learned the fundamentals of Apex programming, including:
+Learned the core concepts of Apex programming:
 - Apex Classes
 - Variables and Data Types
 - Methods
-- Objects and Lists
+- Lists and Collections
 - Conditional Statements (if/else)
-- Loops (for loop)
+- Loops
 - Static Methods
-- Basic Debugging using `System.debug()`
+- Debugging using `System.debug()`
 
 ### 4. Apex Triggers
 Implemented an Apex Trigger using the Trigger Handler pattern.
-- Before Insert: Prevent duplicate Product records.
-- After Update: Update a related Category record.
 
-Tested the trigger and verified the expected behaviour.
+- **Before Insert:** Prevent duplicate Product records.
+- **After Update:** Update a related Category record automatically.
 
-## Skills Learned
-- Salesforce CRM
+Tested the trigger functionality and verified the expected behaviour.
+
+## Skills Gained
+- Salesforce CRM Fundamentals
 - Standard & Custom Objects
-- Data Modelling
+- Salesforce Data Modelling
 - Lookup & Master-Detail Relationships
-- SOQL Queries
-- Apex Basics
-- Apex Classes
-- Variables and Data Types
-- Methods
+- SOQL
+- Apex Programming Basics
+- Apex Classes and Methods
+- Variables and Collections
 - Apex Triggers
 - Trigger Handler Pattern
 
-## Team Collaboration
-This activity was completed collaboratively as a group. We designed the data model together, discussed object relationships, practised SOQL queries, explored Apex fundamentals, implemented triggers, tested each other's work, and resolved issues through collaborative problem-solving.
+## Challenges Faced
+- Resolving API name mismatches in SOQL and Apex.
+- Debugging trigger errors.
+- Understanding object relationships while writing queries.
 
 ## Reflection
+**Today I learned** how to design a Salesforce data model, create relationships between objects, write and execute SOQL queries, understand Apex basics such as classes, variables, methods, and debugging, and implement Apex Triggers using the Trigger Handler pattern.
 
-**Today we learned** how to design a Salesforce data model, create relationships between objects, write and execute SOQL queries, understand Apex basics such as classes, variables, methods, and debugging, and implement Apex Triggers using the Trigger Handler pattern.
-
-**We're still working on** strengthening our understanding of advanced Apex concepts, improving trigger debugging, and gaining more confidence in handling real-world Salesforce development scenarios.
+**I'm still working on** improving my debugging skills, understanding advanced Apex concepts, and becoming more confident in writing scalable Salesforce solutions.
 
 ---
 
-### Technologies Used
+## Technologies Used
 - Salesforce CRM
 - Apex
 - SOQL
