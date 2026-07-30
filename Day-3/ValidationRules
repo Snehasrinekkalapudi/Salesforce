@@ -1,0 +1,41 @@
+Validation Rules:
+Object: Order__c
+
+1. Validation Rule Name
+Order_Date_Validation
+Purpose: Prevent users from entering a future Order Date.
+Formula: Order_Date__c > TODAY()
+Error Message: Order Date cannot be in the future.
+Error Location: Order Date
+
+2. Validation Rule Name
+Product_Price_Validation
+Purpose: Ensure Total Amount is greater than zero.
+Formula: Total_Amount__c <= 0
+Error Message: Product Price must be greater than 0.
+Error Location: Total Amount
+
+3. Validation Rule Name
+Status_Check
+Purpose: Ensure an Order Status is selected.
+Formula: ISBLANK(TEXT(Status__c))
+Error Message: Please select an Order Status.
+Error Location: Status
+
+Object: Product__c
+
+1. Validation Rule Name
+Product_Price_Validation
+Purpose: Ensure Product Price is greater than zero.
+Formula: Price__c <= 0
+Error Message: Product Price must be greater than zero.
+Error Location: Price
+
+2. Validation Rule Name
+Stock_Validation
+Purpose: Prevent negative stock quantity.
+Formula: Stock_Quantity__c < 0
+Error Message: Stock Quantity cannot be negative.
+Error Location: Stock Quantity
+
+
