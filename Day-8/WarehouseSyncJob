@@ -1,0 +1,21 @@
+public class WarehouseSyncJob implements Queueable{
+
+    private Id orderId;
+
+    public WarehouseSyncJob(Id orderId){
+
+        this.orderId = orderId;
+
+    }
+
+    public void execute(QueueableContext context){
+
+        System.enqueueJob(
+
+            new NotificationJob(orderId)
+
+        );
+
+    }
+
+}
