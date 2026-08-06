@@ -1,0 +1,28 @@
+public class OrderService {
+
+    public static Order__c getOrder(Id orderId){
+
+        // Retrieve the Order
+        Order__c order = [
+
+            SELECT Id,
+                   Customer__c,
+                   Customer_Email__c,
+                   Status__c
+            FROM Order__c
+            WHERE Id = :orderId
+            LIMIT 1
+
+        ];
+
+        // Submit Queueable Job
+        System.enqueueJob(
+            new OrderPostProcessingJob(order.Id)
+        );
+
+        // Return the Order
+        return order;
+
+    }
+
+}
