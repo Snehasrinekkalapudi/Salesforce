@@ -1,0 +1,15 @@
+public class OrderScheduler implements Schedulable{
+
+    public void execute(SchedulableContext sc){
+
+        Database.executeBatch(
+
+            new OrderCategoryBatch(),
+
+            200
+
+        );
+
+    }
+
+}
