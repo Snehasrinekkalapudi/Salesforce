@@ -1,0 +1,15 @@
+public class NotificationJob implements Queueable{
+
+    private Id orderId;
+
+    public NotificationJob(Id orderId){
+
+        this.orderId = orderId;
+
+    }
+
+    public void execute(QueueableContext context){
+
+    }
+
+}
