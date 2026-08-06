@@ -1,0 +1,15 @@
+public class NotificationService {
+
+    public static void sendOrderNotification(List<Order__c> orders){
+
+        for(Order__c ord : orders){
+
+            System.debug('Notification Sent');
+            System.debug('Order Number : ' + ord.Name);
+            System.debug('Status : ' + ord.Status__c);
+
+        }
+
+    }
+
+}
