@@ -1,0 +1,22 @@
+public class OrderPostProcessingJob implements Queueable {
+
+    private Id orderId;
+
+    // Constructor
+    public OrderPostProcessingJob(Id orderId){
+
+        this.orderId = orderId;
+
+    }
+
+    public void execute(QueueableContext context){
+
+    System.debug('Starting Background Processing');
+
+    System.enqueueJob(
+        new WarehouseSyncJob(orderId)
+    );
+
+}
+
+}
