@@ -1,0 +1,53 @@
+public class OrderCategoryBatch implements Database.Batchable<SObject>{
+
+    public Database.QueryLocator start(Database.BatchableContext bc){
+
+        return Database.getQueryLocator(
+
+            [
+
+                SELECT Id,
+                       Total_Amount__c,
+                       Order_Category__c
+
+                FROM Order__c
+
+                WHERE Order_Category__c = NULL
+
+            ]
+
+        );
+
+    }
+
+    public void execute(Database.BatchableContext bc,List<Order__c> scope){
+
+        for(Order__c order : scope){
+
+            if(order.Total_Amount__c >= 5000){
+
+                order.Order_Category__c='Premium';
+
+            }
+            else if(order.Total_Amount__c >=1000){
+
+                order.Order_Category__c='Gold';
+
+            }
+            else{
+
+                order.Order_Category__c='Regular';
+
+            }
+
+        }
+
+        update scope;
+
+    }
+
+    public void finish(Database.BatchableContext bc){
+
+    }
+
+}
