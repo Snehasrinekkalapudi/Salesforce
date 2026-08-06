@@ -1,0 +1,13 @@
+public class OrderTriggerHandler {
+
+    public static void afterInsert(List<Order__c> newOrders){
+
+        for(Order__c order : newOrders){
+
+            OrderService.processOrder(order.Id);
+
+        }
+
+    }
+
+}
