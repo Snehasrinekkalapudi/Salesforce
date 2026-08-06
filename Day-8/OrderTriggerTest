@@ -1,0 +1,91 @@
+@isTest
+public class OrderTriggerTest{
+
+    @isTest
+    static void testQueueableProcessing(){
+
+        Order__c order = new Order__c(
+
+            Name='Test Order',
+
+            Total_Amount__c=6000,
+
+            Status__c='Pending'
+
+        );
+
+        insert order;
+
+        Test.startTest();
+
+        System.enqueueJob(
+
+            new OrderPostProcessingJob(order.Id)
+
+        );
+
+        Test.stopTest();
+
+    }
+
+    @isTest
+    static void testBatchProcessing(){
+
+        List<Order__c> orders = new List<Order__c>();
+
+        for(Integer i=1;i<=5;i++){
+
+            orders.add(
+
+                new Order__c(
+
+                    Name='Order '+i,
+
+                    Total_Amount__c=1000*i,
+
+                    Status__c='Pending'
+
+                )
+
+            );
+
+        }
+
+        insert orders;
+
+        Test.startTest();
+
+        Database.executeBatch(
+
+            new OrderCategoryBatch(),
+
+            200
+
+        );
+
+        Test.stopTest();
+
+    }
+
+    @isTest
+    static void testScheduler(){
+
+        Test.startTest();
+
+        String cron='0 0 6 * * ?';
+
+        System.schedule(
+
+            'Daily Order Job',
+
+            cron,
+
+            new OrderScheduler()
+
+        );
+
+        Test.stopTest();
+
+    }
+
+}
