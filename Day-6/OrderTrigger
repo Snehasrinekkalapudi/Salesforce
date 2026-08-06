@@ -1,0 +1,34 @@
+trigger OrderTrigger on Order__c (after insert, after update) {
+
+    if(Trigger.isAfter){
+
+        if(Trigger.isInsert){
+            NotificationService.sendOrderNotification(Trigger.new);
+        }
+
+        if(Trigger.isUpdate){
+
+            List<Order__c> deliveredOrders = new List<Order__c>();
+
+            for(Order__c ord : Trigger.new){
+
+                Order__c oldOrd = Trigger.oldMap.get(ord.Id);
+
+                if(ord.Status__c == 'Delivered' &&
+                   oldOrd.Status__c != 'Delivered'){
+
+                    deliveredOrders.add(ord);
+
+                }
+
+            }
+
+            if(!deliveredOrders.isEmpty()){
+                InventoryService.updateInventory(deliveredOrders);
+            }
+
+        }
+
+    }
+
+}
