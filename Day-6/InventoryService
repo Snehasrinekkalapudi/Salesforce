@@ -1,0 +1,14 @@
+public class InventoryService {
+
+    public static void updateInventory(List<Order__c> orders){
+
+        for(Order__c ord : orders){
+
+            System.debug('Inventory Team Notified');
+            System.debug('Order Number : ' + ord.Name);
+
+        }
+
+    }
+
+}
