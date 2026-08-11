@@ -47,7 +47,7 @@ Update Shipment__c                  ▼
                          ShipmentRetryBatch
                          Batch Apex
 
-###3.2 Synchronous — Coupon Validation (Imperative Apex Call)
+### 3.2 Synchronous — Coupon Validation (Imperative Apex Call)
 
 Used when the user is actively waiting on the screen for a yes/no answer.
 ```text
@@ -80,6 +80,7 @@ LWC displays result
    ┌────┼──────────────┐
    ▼    ▼              ▼
  VALID  INVALID        ERROR
+```
 
 ###3.3 Scheduled Batch — Nightly Stock Sync
 
@@ -126,3 +127,5 @@ Retried during the next nightly run
         ▼
 finish()
 Log completion
+```
+```
