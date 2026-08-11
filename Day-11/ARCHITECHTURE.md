@@ -5,7 +5,7 @@
 3.1 Asynchronous — Shipment Sync (Queueable)
 
 Used when the user does **not need to wait** for the external system's response before continuing their work.
-
+```text
 Order Confirmed (Trigger)
         │
         ▼
@@ -45,11 +45,11 @@ Update Shipment__c                  ▼
                                    ▼
                          ShipmentRetryBatch
                          Batch Apex
-
+```
 3.2 Synchronous — Coupon Validation (Imperative Apex Call)
 
 Used when the user is actively waiting on the screen for a yes/no answer.
-
+```text
 LWC — couponValidator
         │
         │ User enters coupon
@@ -79,11 +79,11 @@ LWC displays result
    ┌────┼──────────────┐
    ▼    ▼              ▼
  VALID  INVALID        ERROR
-
+```
 3.3 Scheduled Batch — Nightly Stock Sync
 
 Used for high-volume, time-based processing where no user is waiting.
-
+```text
 Scheduled Apex
 NightlyStockSyncScheduler
         │
@@ -125,4 +125,4 @@ Retried during the next nightly run
         ▼
 finish()
 Log completion
-
+```
